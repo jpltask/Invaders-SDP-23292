@@ -75,7 +75,17 @@ public final class DrawManager {
 		/** Bonus ship. */
 		EnemyShipSpecial,
 		/** Destroyed enemy ship. */
-		Explosion
+		Explosion,
+		/** Items */
+		Item_MultiShot,
+		Item_Atkspeed,
+		Item_Penetrate,
+		Item_Explode,
+		Item_Slow,
+		Item_Stop,
+		Item_Push,
+		Item_Shield,
+		Item_Heal
 	};
 
 	/**
