@@ -111,6 +111,15 @@ public final class DrawManager {
 			spriteMap.put(SpriteType.EnemyShipC2, new boolean[12][8]);
 			spriteMap.put(SpriteType.EnemyShipSpecial, new boolean[16][7]);
 			spriteMap.put(SpriteType.Explosion, new boolean[13][7]);
+			spriteMap.put(SpriteType.Item_MultiShot, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Atkspeed, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Penetrate, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Explode, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Slow, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Stop, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Push, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Shield, new boolean[5][5]);
+			spriteMap.put(SpriteType.Item_Heal, new boolean[5][5]);
 
 			fileManager.loadSprite(spriteMap);
 			logger.info("Finished loading the sprites.");
