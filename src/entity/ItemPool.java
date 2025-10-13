@@ -2,7 +2,7 @@ package entity;
 
 import java.util.HashSet;
 import java.util.Set;
-import entity.Item.ItemType;
+import entity.DropItem.ItemType;
 
 /**
  * Implements a pool of recyclable items.
@@ -13,7 +13,7 @@ import entity.Item.ItemType;
 public final class ItemPool {
 
     /** Set of already created items. */
-    private static Set<Item> pool = new HashSet<Item>();
+    private static Set<DropItem> pool = new HashSet<DropItem>();
 
     /**
      * Constructor, not called.
@@ -37,9 +37,9 @@ public final class ItemPool {
      *      * Requested item type.
      * @return Requested item.
      */
-    public static Item getItem(final int positionX,
+    public static DropItem getItem(final int positionX,
                                final int positionY, final int speed, final ItemType itemType) {
-        Item item;
+        DropItem item;
         if (!pool.isEmpty()) {
             item = pool.iterator().next();
             pool.remove(item);
@@ -48,7 +48,7 @@ public final class ItemPool {
             item.setSpeed(speed);
             item.setItemType(itemType);
         } else {
-            item = new Item(positionX, positionY, speed, itemType);
+            item = new DropItem(positionX, positionY, speed, itemType);
             item.setPositionX(positionX - item.getWidth() / 2);
         }
         return item;
@@ -60,7 +60,7 @@ public final class ItemPool {
      * @param item
      *            items to recycle.
      */
-    public static void recycle(final Set<Item> item) {
+    public static void recycle(final Set<DropItem> item) {
         pool.addAll(item);
     }
 }
