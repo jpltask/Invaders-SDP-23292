@@ -5,7 +5,7 @@ import engine.GameState;
 import engine.DrawManager.SpriteType;
 import java.util.Random;
 
-public class Item extends Entity {
+public class DropItem extends Entity {
     public enum ItemType {
         Explode(2),
         Slow(10),
@@ -20,12 +20,7 @@ public class Item extends Entity {
             this.weight = weight;
         }
 
-        public int getWeight() {
-            return this.weight;
-        }
-
         private static final ItemType[] VALUES = values();
-        private static final int SIZE = VALUES.length;
         private static final Random RANDOM = new Random();
 
         private static final int TOTAL_WEIGHT;
@@ -58,12 +53,11 @@ public class Item extends Entity {
             return VALUES[0];
         }
     }
-
     /** Speed of the item, positive is down. */
     private int speed;
     /** Type of the item. */
     private ItemType itemType;
-    public Item(final int positionX, final int positionY, final int speed, final ItemType itemType) {
+    public DropItem(final int positionX, final int positionY, final int speed, final ItemType itemType) {
         super(positionX, positionY, 5 * 2, 5 * 2, Color.WHITE);
         this.speed = speed;
         this.itemType = itemType;
